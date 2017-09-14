@@ -21,7 +21,7 @@ class HtmlOutputer(object):
         f = open(r"D:\Baike.html", "w+")
         f.write("<html><head><meta charset=\"utf-8\"><title>BaikeCrawl</title></head><body>")
         for temp in self.data:
-            print temp["title"]
+            print temp["title"].text
             f.write("%s<br>" % temp["title"])
             f.write("%s<br><br>" % temp["sum"])
         f.write("</body></html>")

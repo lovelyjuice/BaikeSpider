@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 class HtmlParser(object):
     def _get_new_urls(self, page_url, soup):
         new_urls = set()
-        raw_urls = soup.find_all("a", href=re.compile(r"/view/\d+\.htm"))
+        raw_urls = soup.find_all("a", href=re.compile(r"/item/"))
         for temp in raw_urls:
             full_url = urlparse.urljoin(page_url, temp["href"])
             new_urls.add(full_url)

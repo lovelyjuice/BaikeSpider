@@ -22,7 +22,7 @@ class SpiderMain(object):
     def craw(self, root_url):
         self.urls.add_new_url(root_url)
         count = 0
-        while self.urls.has_new_url() and count < 200:
+        while self.urls.has_new_url() and count < 5:
             try:
                 new_url = self.urls.get_new_url()
                 html_cont = self.html_downloader.download(new_url)
